@@ -29,6 +29,7 @@ public class Evaluacion {
     return id;
   }
 
+  //Constructor
   public Evaluacion(int ID, byte Ca, String Co) {
       this.id = ID;
       this.calificacion = Ca;
