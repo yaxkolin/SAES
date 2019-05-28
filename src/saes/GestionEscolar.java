@@ -49,7 +49,7 @@ public class GestionEscolar {
 
   public UnidadAprendizaje darDeAltaUnidad(String n, int ID) {
       
-      UnidadAprenidizaje UA = new UnidadAprendizaje(n,ID);
+      UnidadAprendizaje UA = new UnidadAprendizaje(n,ID);
       
       unidades.add(UA);
       
