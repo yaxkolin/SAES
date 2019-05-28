@@ -1,6 +1,7 @@
 package saes;
 
 import java.util.Vector;
+import java.util.ArrayList;
 
 public class Clase {
 
@@ -18,6 +19,8 @@ public class Clase {
     private Alumno [] alumnos;
     private Evaluacion []  evaluaciones;
 
+    private ArrayList<Alumno> Alumnos = new ArrayList<Alumno>(); //Aqui es dinámico
+    
   public boolean estaInscrito(Alumno A) {
   return false;
   }
@@ -31,14 +34,22 @@ public class Clase {
   }
 
   public String getId() {
-  return null;
+  return id;
   }
 
   public void asignarProfesor(Profesor P) {
   }
 
-  public boolean inscribirAlumno(Alumno A) {
-  return false;
+  public boolean inscribirAlumno(Alumno A)
+  {
+      if(!(estaInscrito(A)) && indice<cupo)
+	  {
+		  Alumnos.add(A);
+		  //alumnos[indice+1]=A;
+		  return true;
+	  }
+	  else
+	   return false;
   }
 
   public UnidadAprendizaje getUnidadAprendizaje() {
