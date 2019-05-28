@@ -42,11 +42,11 @@ public class Clase {
   }
 
   public UnidadAprendizaje getUnidadAprendizaje() {
-  return null;
+  return materia;
   }
 
   public Profesor getProfesor() {
-  return null;
+  return maestro;
   }
 
   public boolean tieneEvaluacion(Alumno A) {
@@ -65,6 +65,7 @@ public class Clase {
   }
 
   public void setUnidadAprendizaje(UnidadAprendizaje U) {
+      materia = u;
   }
 
 }
