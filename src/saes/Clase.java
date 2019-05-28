@@ -65,7 +65,7 @@ public class Clase {
   }
 
   public void setUnidadAprendizaje(UnidadAprendizaje U) {
-      materia = u;
+      materia = U;
   }
 
 }
