@@ -39,8 +39,9 @@ public class GestionEscolar {
   return null;
   }
 
-  public Profesor darDeAltaProfesor(String N, int NT) {
-  return null;
+  public void darDeAltaProfesor(String N, int NT) {
+      Profesor profesor1 = new Profesor(N,NT);
+      maestros.add(profesor1);
   }
 
   public Clase darDeAltaClase(int C, String ID) {
