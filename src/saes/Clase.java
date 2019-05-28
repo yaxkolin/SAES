@@ -50,7 +50,20 @@ public class Clase {
   }
 
   public boolean tieneEvaluacion(Alumno A) {
-  return false;
+      int aux=0;
+      boolean bandera=false;
+      for(int i=0;i<alumnos.length;i++){
+          if(A.getNombre().equals(alumnos[i].getNombre())){
+              if(evaluaciones[i]!=null){
+                  bandera=true;
+              }else{
+                  bandera=false;
+              }
+              break;
+          }
+      }
+      
+  return bandera;
   }
 
   public float calcularPromedio() {
@@ -58,10 +71,16 @@ public class Clase {
   }
 
   public int getNumEvaluaciones() {
-  return 0;
+      return numdeEvaluaciones;
   }
 
   public Clase(int C, String ID) {
+      cupo=C;
+      id=ID;
+      numdeEvaluaciones=0;
+      indice=0;
+      alumnos=new Alumno[C];
+      evaluaciones=new Evaluacion[C];
   }
 
   public void setUnidadAprendizaje(UnidadAprendizaje U) {
