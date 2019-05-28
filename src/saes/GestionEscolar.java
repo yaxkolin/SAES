@@ -28,11 +28,13 @@ public class GestionEscolar {
   private Vector  clases;
 
   public Alumno [] getAlumnos() {
-    return null;
+    return (Alumno[]) alumnos.toArray();
+      
   }
 
   public Profesor [] getProfesores() {
-     return null;
+     
+      return (Profesor[]) maestros.toArray();
   }
 
   public Alumno darDeAltaAlumno(String N, int B) {
