@@ -53,10 +53,10 @@ public class GestionEscolar {
 
   public GestionEscolar(String ID) {
       this.id= ID;
-      Vector Alumnos = new Vector();
-      Vector Profesores = new Vector();
-      Vector Clases = new Vector();
-      Vector Unidades = new Vector();
+      alumnos = new Vector();
+      maestros = new Vector();
+      clases = new Vector();
+      unidades = new Vector();
   }
 
 }
