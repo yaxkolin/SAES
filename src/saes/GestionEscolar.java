@@ -48,7 +48,12 @@ public class GestionEscolar {
   }
 
   public UnidadAprendizaje darDeAltaUnidad(String n, int ID) {
-  return null;
+      
+      UnidadAprenidizaje UA = new UnidadAprendizaje(n,ID);
+      
+      unidades.add(UA);
+      
+      return UA;
   }
 
   public GestionEscolar(String ID) {
