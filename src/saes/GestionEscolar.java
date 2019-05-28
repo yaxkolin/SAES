@@ -44,7 +44,9 @@ public class GestionEscolar {
   }
 
   public Clase darDeAltaClase(int C, String ID) {
-  return null;
+      Clase clase1=new Clase(C,ID);
+      clases.add(clase1);
+      return clase1;
   }
 
   public UnidadAprendizaje darDeAltaUnidad(String n, int ID) {
