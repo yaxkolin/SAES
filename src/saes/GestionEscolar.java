@@ -44,7 +44,9 @@ public class GestionEscolar {
   }
 
   public Profesor darDeAltaProfesor(String N, int NT) {
-  return null;
+      Profesor profesor1 = new Profesor(N,NT);
+      maestros.add(profesor1);
+      return profesor1;
   }
 
   public Clase darDeAltaClase(int C, String ID) {
