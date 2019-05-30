@@ -23,7 +23,7 @@ public class Alumno {
   return 0;
   }
 
-  public Clase getClases() {
+  public Clase [] getClases() {
   return null;
   }
 
