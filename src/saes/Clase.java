@@ -63,17 +63,18 @@ public class Clase {
 
   public float calcularPromedio() {
       float suma=0;
-      float promedio=0; 
-      for(int i=0; i<numdeEvaluaciones;i++){
-        suma=evaluaciones[i].getCalif();
-	if(evaluaciones[i]==null){
-		suma=suma+0;
-	}else{
-            suma+=+suma;
+      if(numdeEvaluaciones>=1){
+      for(int i=0; i<indice;i++){
+	if(evaluaciones[i]!=null){
+            suma=evaluaciones[i].getCalif();
+            suma+=suma;
 	}
         }
-      promedio=suma/(float)numdeEvaluaciones;
-      return promedio;
+      return suma/(float)numdeEvaluaciones;
+      }
+      else{
+          return 0;
+      }
   }
 
   public int getNumEvaluaciones() {
