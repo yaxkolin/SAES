@@ -27,15 +27,23 @@ public class Clase {
   }
 
   public Alumno [] getAlumnosInscritos() {
-    return null;
+    Alumno alumnospy[]=new Alumno[indice];
+    for(int i=0; i<indice;i++){
+        alumnospy[i]=alumnos[i];
+    }
+    return alumnospy;
   }
+   
 
   public String getId() {
   return null;
   }
 
   public void asignarProfesor(Profesor P) {
+      maestro=P;
+      P.asignarClase(this);
   }
+  
 
   public boolean inscribirAlumno(Alumno A) {
   return false;
@@ -54,7 +62,18 @@ public class Clase {
   }
 
   public float calcularPromedio() {
-  return 0.0F;
+      float suma=0;
+      float promedio=0; 
+      for(int i=0; i<numdeEvaluaciones;i++){
+        suma=evaluaciones[i].getCalif();
+	if(evaluaciones[i]==null){
+		suma=suma+0;
+	}else{
+            suma+=+suma;
+	}
+        }
+      promedio=suma/(float)numdeEvaluaciones;
+      return promedio;
   }
 
   public int getNumEvaluaciones() {
