@@ -52,8 +52,8 @@ public class Clase {
   public boolean tieneEvaluacion(Alumno A) {
       int aux=0;
       boolean bandera=false;
-      for(int i=0;i<alumnos.length;i++){
-          if(A.getNombre().equals(alumnos[i].getNombre())){
+      for(int i=0;i==indice;i++){
+          if(A.getBoleta()==alumnos[i].getBoleta()){
               if(evaluaciones[i]!=null){
                   bandera=true;
               }else{
