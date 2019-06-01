@@ -37,6 +37,37 @@ public class GestionEscolar {
       return (Profesor[]) maestros.toArray();
   }
 
+  public Profesor getProfesor (int NT)
+  {
+      Profesor profe;
+      Vector profesores = maestros;
+      for (int i=0; i< profesores.capacity(); i++)
+      {
+          profe = profesores.get(i);
+          if (profe.getNumeroTrab() == NT)
+          {
+              break;
+          }
+      }
+      return profe;
+  }
+ 
+  public UnidadAprendizaje getUnidadAprendizaje (int ID)
+  {
+      UnidadAprendizaje unidad;
+      Vector materias = unidades;
+      for (int i=0; i< materias.capacity(); i++)
+      {
+          unidad = materias.get(i);
+          if (unidad.getID() == ID)
+          {
+              break;
+          }
+      }
+      return unidad;
+  }
+  
+  
   public Alumno darDeAltaAlumno(String N, int B) {
     Alumno juan=new Alumno(N,B);
     alumnos.add(juan);
