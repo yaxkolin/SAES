@@ -47,10 +47,11 @@ public class Clase {
                            break;
                       }
               }
-              evaluaciones[aux]=new Evaluacion(A.getBoleta(),C,"Evaluo: ");
+              evaluaciones[aux]=new Evaluacion(aux,C,"Evaluo: ");
+              return true;
           }
   
-  return false;
+ 
   }
 
   public Alumno [] getAlumnosInscritos() {
