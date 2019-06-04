@@ -17,7 +17,7 @@ public class Clase {
     private UnidadAprendizaje materia;
     private Alumno [] alumnos;
     private Evaluacion []  evaluaciones;
-
+    
   public boolean estaInscrito(Alumno A) {
   return false;
   }
@@ -36,7 +36,7 @@ public class Clase {
    
 
   public String getId() {
-  return null;
+  return id;
   }
 
   public void asignarProfesor(Profesor P) {
@@ -45,8 +45,15 @@ public class Clase {
   }
   
 
-  public boolean inscribirAlumno(Alumno A) {
-  return false;
+  public boolean inscribirAlumno(Alumno A)
+  {
+      if(!(estaInscrito(A)) && indice<cupo)
+	  {
+		  alumnos[indice++]=A;
+                
+		  return true;
+	  }
+      return false;
   }
 
   public UnidadAprendizaje getUnidadAprendizaje() {
