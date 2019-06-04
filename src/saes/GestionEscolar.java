@@ -39,11 +39,11 @@ public class GestionEscolar {
 
   public Profesor getProfesor (int NT)
   {
-      Profesor profe;
+      Profesor profe=null;
       Vector profesores = maestros;
-      for (int i=0; i< profesores.capacity(); i++)
+      for (int i=0; i< profesores.size(); i++)
       {
-          profe = profesores.get(i);
+          profe = (Profesor) profesores.get(i);
           if (profe.getNumeroTrab() == NT)
           {
               break;
@@ -54,11 +54,11 @@ public class GestionEscolar {
  
   public UnidadAprendizaje getUnidadAprendizaje (int ID)
   {
-      UnidadAprendizaje unidad;
+      UnidadAprendizaje unidad=null;
       Vector materias = unidades;
-      for (int i=0; i< materias.capacity(); i++)
+      for (int i=0; i< materias.size(); i++)
       {
-          unidad = materias.get(i);
+          unidad = (UnidadAprendizaje) materias.get(i);
           if (unidad.getID() == ID)
           {
               break;
