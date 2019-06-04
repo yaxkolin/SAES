@@ -16,21 +16,26 @@ public class Profesor {
   private Vector  clases;
 
   public String getNombre() {
-  return null;
+    String a=nombre;
+  return a;
   }
 
   public int getNumeroTrab() {
-  return 0;
+    int a=numeroTrab;
+    return a;
   }
 
   public Clase [] getClases() {
-  return null;
+  return (Clase[])clases.toArray();
   }
 
   public void asignarClase(Clase C) {
+    clases.addElement(C);
   }
 
   public Profesor(String N, int NT) {
+    nombre=N;
+    numeroTrab=NT;
   }
 
 }
