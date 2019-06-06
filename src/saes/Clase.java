@@ -24,8 +24,6 @@ public class Clase {
           if(alumnos [i].getBoleta() ==A.getBoleta()){
               return true;
           }
-          else 
-              return false;
       }
   return false;
   }
