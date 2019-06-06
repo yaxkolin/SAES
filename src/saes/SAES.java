@@ -5,15 +5,30 @@
  */
 package saes;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author flore
  */
 public class SAES {
-
-    /**
-     * @param args the command line arguments
-     */
+public static Alumno MenuP(Alumno P[]){
+   
+    String respuesta;
+    int x, ind=0;
+    int i= P.length;
+     String Alu[]=new String[i];
+    for(int j=0;j<=i;j++){
+    Alu[j]=(P[j]).getNombre();
+    }
+    respuesta= (String) JOptionPane.showInputDialog(null, "Selecciona un profesor","Profesores", JOptionPane.DEFAULT_OPTION, null, Alu, Alu[0]);
+    for(x=0;x<=P.length;x++){
+    if(respuesta==P[x].getNombre())
+        ind=x;
+       
+    
+    } return P[ind];
+}
     public static void main(String[] args) {
         
         GestionEscolar a = new GestionEscolar("2CV2");
