@@ -10,24 +10,30 @@ public class Evaluacion {
 
   
   public void setCalif(byte C) {
+      calificacion = C;
   }
 
   public byte getCalif() {
-  return 0;
+    return calificacion;
   }
 
   public void setComentario(String Co) {
+      comentario = new String(Co);
   }
 
   public String getComentario() {
-  return null;
+    return comentario;
   }
 
   public int getID() {
-  return 0;
+    return id;
   }
 
+  // Constructor
   public Evaluacion(int ID, byte Ca, String Co) {
+      this.id = ID;
+      this.calificacion = Ca;
+      this.comentario = new String(Co);
   }
 
 }
