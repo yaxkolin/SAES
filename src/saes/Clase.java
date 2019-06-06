@@ -31,7 +31,7 @@ public class Clase {
   public boolean setEvaluacion(Alumno A, byte C) {
          
       int aux=0;
-          if(tieneEvaluacion(A))
+          if(!estaInscrito(A)||tieneEvaluacion(A))
            return false;
           
               for(int i=0; i<indice;i++)
