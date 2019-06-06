@@ -31,10 +31,9 @@ public class Clase {
   public boolean setEvaluacion(Alumno A, byte C) {
          
       int aux=0;
-          if(tieneEvaluacion(A)){
+          if(tieneEvaluacion(A))
            return false;
-          }
-          else{
+          
               for(int i=0; i<indice;i++)
                   {
                       if(A.getBoleta()==alumnos[i].getBoleta()){
@@ -49,7 +48,7 @@ public class Clase {
              numdeEvaluaciones++;
               
               return true;
-          }
+          
   
  
   }
