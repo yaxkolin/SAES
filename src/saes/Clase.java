@@ -1,11 +1,12 @@
 package saes;
 
+import static java.lang.reflect.Array.get;
 import java.util.Vector;
 
 public class Clase {
 
   private String id;
-
+  
   private int cupo;
 
   private int indice;
@@ -19,11 +20,37 @@ public class Clase {
     private Evaluacion []  evaluaciones;
     
   public boolean estaInscrito(Alumno A) {
+      for(int i=0;i<indice;i++){
+          if(alumnos [i].getBoleta() ==A.getBoleta()){
+              return true;
+          }
+      }
   return false;
   }
 
   public boolean setEvaluacion(Alumno A, byte C) {
-  return false;
+         
+      int aux=0;
+          if(!estaInscrito(A)||tieneEvaluacion(A))
+           return false;
+          
+              for(int i=0; i<indice;i++)
+                  {
+                      if(A.getBoleta()==alumnos[i].getBoleta()){
+                          
+                          aux=i;
+                          
+                         
+                           break;
+                      }
+              }
+              evaluaciones[aux]=new Evaluacion(aux,C,"Evaluo: ");
+             numdeEvaluaciones++;
+              
+              return true;
+          
+  
+ 
   }
 
   public Alumno [] getAlumnosInscritos() {
