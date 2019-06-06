@@ -46,6 +46,8 @@ public class Clase {
                       }
               }
               evaluaciones[aux]=new Evaluacion(aux,C,"Evaluo: ");
+             numdeEvaluaciones++;
+              
               return true;
           }
   
