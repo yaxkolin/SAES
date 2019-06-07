@@ -76,6 +76,39 @@ public static Alumno MenuP(Alumno P[]){
         UnidadAprendizaje u = new UnidadAprendizaje(a.darDeAltaUnidad("Matemáticas Discretas", 8));
         UnidadAprendizaje u = new UnidadAprendizaje(a.darDeAltaUnidad("Ingeniería, Ética y Sociedad", 9));
         UnidadAprendizaje u = new UnidadAprendizaje(a.darDeAltaUnidad("Comunicación Oral y Escrita", 10));
+        
+         p1.asignarClase(c1);
+        p2.asignarClase(c2);
+        p3.asignarClase(c3);
+        p4.asignarClase(c4);
+        p5.asignarClase(c5);
+        p6.asignarClase(c6);
+        p7.asignarClase(c7);
+        p8.asignarClase(c8);
+        p9.asignarClase(c9);
+        p10.asignarClase(c10);
+        
+        a1.inscribirClase(c1);
+        a2.inscribirClase(c2);
+        a3.inscribirClase(c3);
+        a4.inscribirClase(c4);
+        a5.inscribirClase(c5);
+        a6.inscribirClase(c6);
+        a7.inscribirClase(c7);
+        a8.inscribirClase(c8);
+        a9.inscribirClase(c9);
+        a10.inscribirClase(c10);
+        
+        c1.asignarProfesor(p1);
+        c2.asignarProfesor(p2);
+        c3.asignarProfesor(p3);
+        c4.asignarProfesor(p4);
+        c5.asignarProfesor(p5);
+        c6.asignarProfesor(p6);
+        c7.asignarProfesor(p7);
+        c8.asignarProfesor(p8);
+        c9.asignarProfesor(p9);
+        c10.asignarProfesor(p10);
 
     }
     
