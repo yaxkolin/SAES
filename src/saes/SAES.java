@@ -116,6 +116,21 @@ public static Alumno MenuP(Alumno P[]){
         c8.asignarProfesor(p8);
         c9.asignarProfesor(p9);
         c10.asignarProfesor(p10);
+        
+        //Alumno [] alum = a.getAlumnos();
+        //Profesor [] profes = a.getProfesores();
+        String botones[]={"Profesor","Estudiante","Salir"};
+        int Opc = JOptionPane.showOptionDialog(null, "", "MENU", JOptionPane.OK_OPTION, JOptionPane.NO_OPTION,null,botones,"default");
+        
+        if(Opc==0){
+            JFrame frame = new JFrame("Input Dialog Example");
+            //String Profesor = (String) JOptionPane.showInputDialog(frame,"Elija el profesor","Profesores",JOptionPane.QUESTION_MESSAGE,null,profes,profes[0]);
+            menuP();
+        }else if(Opc==1){
+            JFrame frame2 = new JFrame("Input Dialog Example");
+            //String Alumno = (String) JOptionPane.showInputDialog(frame2,"Elija el alumno","Alumnos",JOptionPane.QUESTION_MESSAGE,null,alum,alum[0]);
+            menuSinCalificaciones(menuA());
+        }
 
     }
     
@@ -168,3 +183,72 @@ public static void MenuP_ev(Profesor prof){
 }
 
 }
+
+public static Alumno MenuA(Alumno A[]){
+   
+    String respuesta;
+    int x, ind=0;
+    int i= A.length;
+     String Alu[]=new String[i];
+    for(int j=0;j<=i;j++){
+    Alu[j]=(A[j]).getNombre();
+    }
+    respuesta= (String) JOptionPane.showInputDialog(null, "Selecciona un alumno","Alumnos", JOptionPane.DEFAULT_OPTION, null, Alu, Alu[0]);
+    for(x=0;x<=A.length;x++){
+    if(respuesta==A[x].getNombre())
+        ind=x;
+       
+    
+    } return A[ind];
+
+        }
+
+public static String clasesSinCalificaciones(Alumno a){
+        String Saux="";
+        boolean x=true;
+        Clase[] ClasesAlumno = a.getClases();
+        
+        for(int i=0; i<ClasesAlumno.length; i++){       
+            if(ClasesAlumno[i].tieneEvaluacion(a)!=true){
+                int j = i++;
+                Saux += j+". "+a+" "+a.getClase(i).getProfesor()+" "+a.getClase(i).getUnidadAprendizaje()+"\n";
+            }           
+        }
+        
+        return Saux;
+        
+    }
+    
+    public static void menuSinCalificaciones(Alumno a){
+        String Saux;
+        boolean x;
+        try{
+            do{
+
+                Saux = clasesSinCalificaciones(a);
+
+                if(Saux.length()>2){
+
+                    JOptionPane.showMessageDialog(null,Saux);
+                    String fe = JOptionPane.showInputDialog("Ingrese el numero de la clase que desea evaluar \n"+Saux);
+                    int b = Integer.parseInt(fe);
+                    b--;
+
+                    JOptionPane.showInputDialog("Ingrese la calificacion para la clase"+a.getClase(b));
+                    int c = Integer.parseInt(fe);
+                    a.getClase(b).setEvaluacion(a, (byte) c);
+                    x = true;
+                }
+
+                else
+                    JOptionPane.showMessageDialog(null,"El alumno tiene todas las evaluaciones");
+                    x = false;
+
+            }while(x!=false);
+        }
+
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Ingrese una opcion valida");
+        }
+    }
+
