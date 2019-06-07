@@ -74,10 +74,10 @@ public class Clase {
 
   public boolean inscribirAlumno(Alumno A)
   {
-      if(!(estaInscrito(A)) && indice<cupo)
+      if(!estaInscrito(A) && indice<cupo)
 	  {
 		  alumnos[indice++]=A;
-                
+                  A.inscribirClase(this);
 		  return true;
 	  }
       return false;

@@ -24,7 +24,10 @@ public class Alumno {
   }
 
   public Clase [] getClases() {
-    return (Clase[])clases.toArray();
+    Clase [] materias=new Clase [clases.toArray().length];  
+    for(int i=0;i< clases.toArray().length; i++ )
+         materias[i]=(Clase)clases.toArray()[i];
+    return materias;
   }
 
   public void inscribirClase(Clase C) {
@@ -34,6 +37,7 @@ public class Alumno {
   public Alumno(String N, int B) {
       nombre=N;
       boleta=B;
+      clases=new Vector ();
   }
   
 }
