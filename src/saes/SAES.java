@@ -5,11 +5,17 @@
  */
 package saes;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 /**
  *
- * @author flore
+ * @author Randy
  */
 public class SAES {
 public static Alumno MenuP(Alumno P[]){
@@ -29,6 +35,7 @@ public static Alumno MenuP(Alumno P[]){
     
     } return P[ind];
 }
+
     public static void main(String[] args) {
         
         GestionEscolar a = new GestionEscolar("2CV2");
@@ -112,4 +119,52 @@ public static Alumno MenuP(Alumno P[]){
 
     }
     
+    
+        
+public static void MenuP_ev(Profesor prof){
+
+
+      //Declaracion de objetos para la ventana de las evaluaciones al profesor
+      JFrame prof_evaluado=new JFrame();
+      
+      JButton regresar=new JButton("Regresar");
+      
+      String evs=new String();
+      Clase [] C_Prof=prof.getClases();
+      //Obteniendo las evaluaciones del profesor  
+      evs="Grupo\tUnidad de Aprendizaje\tPromedio\tEvaluados/Inscritos";
+      if(prof.getClases()!=null)
+      for(int i=0;i<prof.getClases().length;i++)
+       evs+=""+C_Prof[i].getId()+"\t"+C_Prof[i].getUnidadAprendizaje().getNombre()+"\t"+C_Prof[i].calcularPromedio()+"\t"+C_Prof[i].getNumEvaluaciones()+"/"+C_Prof[i].getAlumnosInscritos().length+"\n\n";
+     
+      JTextArea evaluaciones = new JTextArea(evs);
+      JScrollPane jsp = new JScrollPane(evaluaciones); 
+       //Modificando el scroll
+       jsp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+       jsp.setBounds(25, 25, 620, 360);
+      //Modificando el textArea
+      evaluaciones.setEditable(false);
+      evaluaciones.setLineWrap(true);
+      evaluaciones.setWrapStyleWord(true);      
+      //Modificando el boton
+      regresar.setBounds(25, 400, 100, 50);
+      //Modificando el JFrame
+      prof_evaluado.setSize(680,500);
+      prof_evaluado.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      prof_evaluado.setLayout(null);
+      prof_evaluado.setLocationRelativeTo(null);
+      prof_evaluado.setTitle(""+prof.getNombre()+"~Evaluaciones");
+      prof_evaluado.add(jsp);
+      prof_evaluado.add(regresar);
+      prof_evaluado.setVisible(true);
+      //Configurando el boton
+      regresar.addActionListener(new ActionListener() {
+          @Override
+          public void actionPerformed(ActionEvent e) {
+              prof_evaluado.dispose();
+          }
+      });
+
+}
+
 }
