@@ -66,81 +66,83 @@ public class SAES {
         UnidadAprendizaje u8 = a.darDeAltaUnidad("Matemáticas Discretas", 8);
         UnidadAprendizaje u9 = a.darDeAltaUnidad("Ingeniería, Ética y Sociedad", 9);
         UnidadAprendizaje u10 = a.darDeAltaUnidad("Comunicación Oral y Escrita", 10);
-        a1.inscribirClase(c1);
-        a1.inscribirClase(c2);
-        a1.inscribirClase(c3);
-        a1.inscribirClase(c4);
-        a1.inscribirClase(c5);
-        a2.inscribirClase(c1);
-        a3.inscribirClase(c2);
-        a2.inscribirClase(c3);
-        a2.inscribirClase(c4);
-        a2.inscribirClase(c5);
-        a2.inscribirClase(c2);
         
-        a3.inscribirClase(c1);
-        a3.inscribirClase(c4);
-        a3.inscribirClase(c6);
-        a3.inscribirClase(c7);
-        a3.inscribirClase(c8);
-        a3.inscribirClase(c9);
-        a3.inscribirClase(c10);
+        c1.inscribirAlumno(a1);
+        c1.inscribirAlumno(a2);
+        c1.inscribirAlumno(a3);
+        c1.inscribirAlumno(a4);
+        c1.inscribirAlumno(a5);
         
-        a4.inscribirClase(c4);
-        a4.inscribirClase(c5);
-        a4.inscribirClase(c6);
-        a4.inscribirClase(c7);
-        a4.inscribirClase(c8);
-        a4.inscribirClase(c9);
-        a4.inscribirClase(c10);
+        c2.inscribirAlumno(a1);
+        c2.inscribirAlumno(a2);
+        c2.inscribirAlumno(a3);
+        c2.inscribirAlumno(a4);
+        c2.inscribirAlumno(a5);
+        c2.inscribirAlumno(a2);
         
-        a5.inscribirClase(c5);
-        a5.inscribirClase(c4);
-        a5.inscribirClase(c3);
-        a5.inscribirClase(c2);
-        a5.inscribirClase(c1);
+        c3.inscribirAlumno(a1);
+        c3.inscribirAlumno(a4);
+        c3.inscribirAlumno(a6);
+        c3.inscribirAlumno(a7);
+        c3.inscribirAlumno(a8);
+        c3.inscribirAlumno(a9);
+        c3.inscribirAlumno(a10);
         
-        a6.inscribirClase(c6);
-        a6.inscribirClase(c7);
-        a6.inscribirClase(c8);
-        a6.inscribirClase(c9);
-        a6.inscribirClase(c10);
+        c4.inscribirAlumno(a4);
+        c4.inscribirAlumno(a5);
+        c4.inscribirAlumno(a6);
+        c4.inscribirAlumno(a7);
+        c4.inscribirAlumno(a8);
+        c4.inscribirAlumno(a9);
+        c4.inscribirAlumno(a10);
         
-        a7.inscribirClase(c7);
-        a7.inscribirClase(c6);
-        a7.inscribirClase(c5);
-        a7.inscribirClase(c4);
-        a7.inscribirClase(c3);
-        a7.inscribirClase(c2);
-        a7.inscribirClase(c1);
+        c5.inscribirAlumno(a5);
+        c5.inscribirAlumno(a4);
+        c5.inscribirAlumno(a3);
+        c5.inscribirAlumno(a2);
+        c5.inscribirAlumno(a1);
         
-        a8.inscribirClase(c8);
-        a8.inscribirClase(c9);
-        a8.inscribirClase(c10);
-        a8.inscribirClase(c6);
-        a8.inscribirClase(c4);
+        c6.inscribirAlumno(a6);
+        c6.inscribirAlumno(a7);
+        c6.inscribirAlumno(a8);
+        c6.inscribirAlumno(a9);
+        c6.inscribirAlumno(a10);
+        
+        c7.inscribirAlumno(a7);
+        c7.inscribirAlumno(a6);
+        c7.inscribirAlumno(a5);
+        c7.inscribirAlumno(a4);
+        c7.inscribirAlumno(a3);
+        c7.inscribirAlumno(a2);
+        c7.inscribirAlumno(a1);
+        
+        c8.inscribirAlumno(a8);
+        c8.inscribirAlumno(a9);
+        c8.inscribirAlumno(a10);
+        c8.inscribirAlumno(a6);
+        c8.inscribirAlumno(a4);
         
         
-        a9.inscribirClase(c9);
-        a9.inscribirClase(c8);
-        a9.inscribirClase(c7);
-        a9.inscribirClase(c6);
-        a9.inscribirClase(c5);
-        a9.inscribirClase(c4);
-        a9.inscribirClase(c3);
-        a9.inscribirClase(c2);
-        a9.inscribirClase(c1);
+        c9.inscribirAlumno(a9);
+        c9.inscribirAlumno(a8);
+        c9.inscribirAlumno(a7);
+        c9.inscribirAlumno(a6);
+        c9.inscribirAlumno(a5);
+        c9.inscribirAlumno(a4);
+        c9.inscribirAlumno(a3);
+        c9.inscribirAlumno(a2);
+        c9.inscribirAlumno(a1);
         
-        a10.inscribirClase(c10);
-        a10.inscribirClase(c9);
-        a10.inscribirClase(c8);
-        a10.inscribirClase(c7);
-        a10.inscribirClase(c6);
-        a10.inscribirClase(c5);
-        a10.inscribirClase(c4);
-        a10.inscribirClase(c3);
-        a10.inscribirClase(c2);
-        a10.inscribirClase(c1);
+        c10.inscribirAlumno(a10);
+        c10.inscribirAlumno(a9);
+        c10.inscribirAlumno(a8);
+        c10.inscribirAlumno(a7);
+        c10.inscribirAlumno(a6);
+        c10.inscribirAlumno(a5);
+        c10.inscribirAlumno(a4);
+        c10.inscribirAlumno(a3);
+        c10.inscribirAlumno(a2);
+        c10.inscribirAlumno(a1);
         
         
         c1.asignarProfesor(p1);
@@ -177,7 +179,7 @@ public class SAES {
                         
                     
                     JFrame frame = new JFrame("Input Dialog Example");
-                    String respuesta1;
+                    String respuestc1;
                     int x, ind=0;
                     int i= a.getProfesores().length;
                     String Pro[]=new String[i];
@@ -186,10 +188,10 @@ public class SAES {
                         Pro[j]=(a.getProfesores()[j]).getNombre();
                     }
                     
-                    respuesta1= (String) JOptionPane.showInputDialog(null, "Selecciona un profesor","Profesores", JOptionPane.DEFAULT_OPTION, null, Pro, Pro[0]);
+                    respuestc1= (String) JOptionPane.showInputDialog(null, "Selecciona un profesor","Profesores", JOptionPane.DEFAULT_OPTION, null, Pro, Pro[0]);
                     
                     for(x=0;x<a.getProfesores().length;x++){
-                        if(respuesta1.equals(a.getProfesor(x).getNombre()))
+                        if(respuestc1.equals(a.getProfesor(x).getNombre()))
                             ind=x;
                     } 
                     Profesor prof = new Profesor(a.getProfesor(ind).getNombre(),a.getProfesor(ind).getNumeroTrab());
