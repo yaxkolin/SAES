@@ -28,13 +28,18 @@ public class GestionEscolar {
   private Vector  clases;
 
   public Alumno [] getAlumnos() {
-    return (Alumno[]) alumnos.toArray();
-      
+     
+    Alumno [] Alum=new Alumno [alumnos.toArray().length];  
+    for(int i=0;i< alumnos.toArray().length; i++ )
+         Alum[i]=(Alumno)alumnos.toArray()[i];
+    return Alum;
   }
 
   public Profesor [] getProfesores() {
-     
-      return (Profesor[]) maestros.toArray();
+     Profesor [] profs=new Profesor [maestros.toArray().length];  
+    for(int i=0;i< maestros.toArray().length; i++ )
+         profs[i]=(Profesor)maestros.toArray()[i];
+    return profs;
   }
 
   public Profesor getProfesor (int NT)

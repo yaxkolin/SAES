@@ -26,7 +26,10 @@ public class Profesor {
   }
 
   public Clase [] getClases() {
-  return (Clase[])clases.toArray();
+   Clase [] materias=new Clase [clases.toArray().length];  
+    for(int i=0;i< clases.toArray().length; i++ )
+         materias[i]=(Clase)clases.toArray()[i];
+    return materias;
   }
 
   public void asignarClase(Clase C) {
@@ -36,6 +39,7 @@ public class Profesor {
   public Profesor(String N, int NT) {
     nombre=N;
     numeroTrab=NT;
+    clases=new Vector();
   }
 
 }
