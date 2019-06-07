@@ -34,7 +34,7 @@ public class SAES {
         Alumno a9 = a.darDeAltaAlumno("Israel", 2015148745);
         Alumno a10= a.darDeAltaAlumno("Randy", 2015110798);
         
-        Profesor p1 = a.darDeAltaProfesor("Yaxkin", 11); 
+        Profesor p1 = a.darDeAltaProfesor("Yaxkin", 11);
         Profesor p2 = a.darDeAltaProfesor("Crispin", 21); 
         Profesor p3 = a.darDeAltaProfesor("Santiago", 31); 
         Profesor p4 = a.darDeAltaProfesor("Martha Patricia", 41); 
@@ -47,13 +47,13 @@ public class SAES {
         
         Clase c1 = a.darDeAltaClase(30, "2CV2");
         Clase c2 = a.darDeAltaClase(20, "1CM1");
-        Clase c3 = a.darDeAltaClase(30, "1CM9");
-        Clase c4 = a.darDeAltaClase(40, "1CM9");
+        Clase c3 = a.darDeAltaClase(30, "1CM6");
+        Clase c4 = a.darDeAltaClase(40, "1CM7");
         Clase c5 = a.darDeAltaClase(50, "1CM12");
         Clase c6 = a.darDeAltaClase(30, "1CM3");
         Clase c7 = a.darDeAltaClase(20, "1CV9");
-        Clase c8 = a.darDeAltaClase(30, "1CM1");
-        Clase c9 = a.darDeAltaClase(40, "1CM1");
+        Clase c8 = a.darDeAltaClase(30, "1CM11");
+        Clase c9 = a.darDeAltaClase(40, "1CM8");
         Clase c10 = a.darDeAltaClase(50, "1CM2");
         
         UnidadAprendizaje u1 = a.darDeAltaUnidad("Programacion Orientada a Objetos", 1);
@@ -122,7 +122,6 @@ public class SAES {
         c8.inscribirAlumno(a6);
         c8.inscribirAlumno(a4);
         
-        
         c9.inscribirAlumno(a9);
         c9.inscribirAlumno(a8);
         c9.inscribirAlumno(a7);
@@ -143,8 +142,7 @@ public class SAES {
         c10.inscribirAlumno(a3);
         c10.inscribirAlumno(a2);
         c10.inscribirAlumno(a1);
-        
-        
+         
         c1.asignarProfesor(p1);
         c2.asignarProfesor(p2);
         c3.asignarProfesor(p3);
@@ -157,15 +155,15 @@ public class SAES {
         c10.asignarProfesor(p10);
         
         c1.setUnidadAprendizaje(u1);
-        c1.setUnidadAprendizaje(u2);
-        c1.setUnidadAprendizaje(u3);
-        c1.setUnidadAprendizaje(u4);
-        c1.setUnidadAprendizaje(u5);
-        c1.setUnidadAprendizaje(u6);
-        c1.setUnidadAprendizaje(u7);
-        c1.setUnidadAprendizaje(u8);
-        c1.setUnidadAprendizaje(u9);
-        c1.setUnidadAprendizaje(u10);
+        c2.setUnidadAprendizaje(u2);
+        c3.setUnidadAprendizaje(u3);
+        c4.setUnidadAprendizaje(u4);
+        c5.setUnidadAprendizaje(u5);
+        c6.setUnidadAprendizaje(u6);
+        c7.setUnidadAprendizaje(u7);
+        c8.setUnidadAprendizaje(u8);
+        c9.setUnidadAprendizaje(u9);
+        c10.setUnidadAprendizaje(u10);
         
         String botones[]={"Profesor","Estudiante","Salir"};
         boolean salir=true;
@@ -180,31 +178,32 @@ public class SAES {
                     
                     JFrame frame = new JFrame("Input Dialog Example");
                     String respuestc1;
-                    int x, ind=0;
-                    int i= a.getProfesores().length;
+                    int x;
+                    Profesor prof=null;
+                    Profesor maestros []= a.getProfesores();
+                    int i= maestros.length;
                     String Pro[]=new String[i];
                     
                     for(int j=0;j<i;j++){
-                        Pro[j]=(a.getProfesores()[j]).getNombre();
+                        Pro[j]=(maestros[j]).getNombre();
                     }
                     
                     respuestc1= (String) JOptionPane.showInputDialog(null, "Selecciona un profesor","Profesores", JOptionPane.DEFAULT_OPTION, null, Pro, Pro[0]);
                     
-                    for(x=0;x<a.getProfesores().length;x++){
-                        if(respuestc1.equals(a.getProfesor(x).getNombre()))
-                            ind=x;
+                    for(x=0;x<i;x++){
+                        if(respuestc1.equals(maestros[x].getNombre()))
+                            prof=maestros[x];
                     } 
-                    Profesor prof = new Profesor(a.getProfesor(ind).getNombre(),a.getProfesor(ind).getNumeroTrab());
-                        JFrame prof_evaluado=new JFrame();
+                  JFrame prof_evaluado=new JFrame();
       
       JButton regresar=new JButton("Regresar");
       
-      String evs=new String();
+      String evs=null;
       Clase [] C_Prof=prof.getClases();
       //Obteniendo las evaluaciones del profesor  
       evs="Grupo\tUnidad de Aprendizaje\tPromedio\tEvaluados/Inscritos";
-      if(prof.getClases()!=null)
-      for(int l=0;l<prof.getClases().length;l++)
+      if(C_Prof!=null)
+      for(int l=0;l<C_Prof.length;l++)
        evs+=""+C_Prof[l].getId()+"\t"+C_Prof[l].getUnidadAprendizaje().getNombre()+"\t"+C_Prof[l].calcularPromedio()+"\t"+C_Prof[l].getNumEvaluaciones()+"/"+C_Prof[l].getAlumnosInscritos().length+"\n\n";
      
       JTextArea evaluaciones = new JTextArea(evs);
@@ -242,33 +241,37 @@ public class SAES {
                     
                      //String Alumno = (String) JOptionPane.showInputDialog(frame2,"Elija el alumno","Alumnos",JOptionPane.QUESTION_MESSAGE,null,alum,alum[0]);
                     
-                    String respuesta;
+                    String respuesta=null;
                     int x1, ind1=0;
-                    int i1= a.getAlumnos().length;
+                    Alumno Alum[]=a.getAlumnos();
+                    int i1= Alum.length;
+                    Alumno Al=null;
                     String Alu[]=new String[i1];
                     
                     for(int j=0;j<i1;j++){
-                        Alu[j]=(a.getAlumnos()[j]).getNombre();
+                        Alu[j]=(Alum[j]).getNombre();
                     }
                     
                     respuesta= (String) JOptionPane.showInputDialog(null, "Selecciona un alumno","Alumnos", JOptionPane.DEFAULT_OPTION, null, Alu, Alu[0]);
-                    for(x1=0;x1<a.getAlumnos().length;x1++){
-                        if(respuesta.equals(Alu[x1]))
-                            ind1=x1;   
-                        break;
+                    for(x1=0;x1<i1;x1++){
+                        if(respuesta.equals(Alum[x1].getNombre())){
+                            Al=Alum[x1];   
+                            break;
+                            
+                        } 
                     }
                     String Saux="";
                     boolean x3=true;
-                    Alumno seleccion = a.getAlumnos()[ind1];
-                    Clase[] ClasesAlumno = seleccion.getClases();
+                    
+                    Clase[] ClasesAlumno = Al.getClases();
                     int o=0;
                     try{
                         do{
 
                             for(int i2=0; i2<ClasesAlumno.length; i2++){       
-                                if(ClasesAlumno[i2].tieneEvaluacion(seleccion)!=true){
+                                if(!(ClasesAlumno[i2].tieneEvaluacion(Al))){
                                     int j = i2++;
-                                    Saux += j+". "+seleccion+" "+seleccion.getClases()[i2].getProfesor()+" "+seleccion.getClases()[i2].getUnidadAprendizaje()+"\n";
+                                    Saux += j+". "+Al.getNombre()+" "+ClasesAlumno[i2].getProfesor()+" "+ClasesAlumno[i2].getUnidadAprendizaje().getNombre()+"\n";
                                 }           
                             }
                             if(Saux.length()>2){
@@ -279,9 +282,9 @@ public class SAES {
                                 o=b;
                                 if(o!=15){
                                     b--;
-                                    JOptionPane.showInputDialog("Ingrese la calificacion para la clase"+seleccion.getClases()[b]);
+                                    JOptionPane.showInputDialog("Ingrese la calificacion para la clase"+Al.getClases()[b]);
                                     int c = Integer.parseInt(fe);
-                                    seleccion.getClases()[b].setEvaluacion(seleccion, (byte) c);
+                                    Al.getClases()[b].setEvaluacion(Al, (byte) c);
                                     x3 = true;
                                 }
                             }
